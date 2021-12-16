@@ -4,7 +4,7 @@ object L16 {
     assert(threeSumClosest(Array(-1, 2, 1, -4), 1) == 2)
     assert(threeSumClosest(Array(0, 0, 0), 1) == 0)
   }
-
+  
   def threeSumClosest(nums: Array[Int], target: Int): Int = {
     val arr = nums.sortWith(_<_)
     var min = arr(0) + arr(1) + arr(2)

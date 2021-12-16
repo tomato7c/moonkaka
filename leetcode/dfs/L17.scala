@@ -14,7 +14,7 @@ object L17 {
     res.clear()
     println(letterCombinations("555"))
   }
-  // dfs
+  // dfs  TODO 可以看leetcode上的def内def
   def letterCombinations(digits: String): List[String] = {
     if (digits.isEmpty) return res.toList
 
