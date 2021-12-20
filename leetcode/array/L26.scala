@@ -10,17 +10,15 @@ object L26 {
   /**
    * 既然是排序的，利用双指针，a指向结果集末尾，b向右移动
    */
-  def removeDuplicates(arr: Array[Int]): Int = {
-    if (arr.length < 1) return 0
-    var a = 0
-    var b = 1
-    while (b < arr.length) {
-      if (arr(b) != arr(a)) {
-        a += 1
-        arr(a) = arr(b)
-      }
-      b += 1
+    def removeDuplicates(arr: Array[Int]): Int = {
+        if (arr.length < 1) return 0
+        var a = 0
+        for (b <- 1 until arr.length) {
+            if (arr(a) != arr(b)) {
+                a += 1
+                arr(a) = arr(b)
+            }
+        }
+        a + 1
     }
-    a + 1
-  }
 }
