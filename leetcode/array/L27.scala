@@ -9,11 +9,9 @@ object L27 {
   // 单次枚举就行~
   def removeElement(arr: Array[Int], value: Int): Int = {
     var a = -1
-    for (v <- arr) {
-      if (v != value) {
-        a += 1
-        arr(a) = v
-      }
+    for (v <- arr if v != value) {
+      a += 1
+      arr(a) = v
     }
     a + 1
   }
