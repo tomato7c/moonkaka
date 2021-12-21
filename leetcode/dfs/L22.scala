@@ -10,7 +10,7 @@ object L22 {
         dfs("", 0, 0)
         res.toList
     }
-
+    // 合法的括号序列中，左括号数量大于等于右括号数量
     private def dfs(s: String, open: Int, close: Int) {
         if (close > open || open > n) return
         if (close == open && open == n) {

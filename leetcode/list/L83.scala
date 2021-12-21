@@ -4,7 +4,7 @@ object L83 {
     deleteDuplicates(ListNode.of(Array(0, 0, 1, 1, 1, 5))).printListNode()
   }
 
-  // 双指针，i维护结果集末尾, j向后移动
+  // 双指针，i维护结果集末尾, j向后移动 TODO 其实不需要dummy，head值是固定的
   def deleteDuplicates(head: ListNode): ListNode = {
     val dummy = new ListNode()
     dummy.next = head
