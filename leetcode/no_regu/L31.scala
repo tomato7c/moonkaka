@@ -1,4 +1,19 @@
 object L31 {
+
+    def main(args: Array[String]): Unit = {
+        var arr = Array(1, 2, 4, 3)
+        nextPermutation(arr)
+        AssertHelper.assertEquals(arr, Array(1, 3, 2, 4))
+
+        arr = Array(3, 2, 1)
+        nextPermutation(arr)
+        AssertHelper.assertEquals(arr, Array(1, 2, 3))
+
+        arr = Array(2, 1, 1, 1)
+        nextPermutation(arr)
+        AssertHelper.assertEquals(arr, Array(1, 1, 1, 2))
+    }
+
     def nextPermutation(arr: Array[Int]): Unit = {
         // 从后向前找到第一个降序位置
         var i = arr.length - 2
