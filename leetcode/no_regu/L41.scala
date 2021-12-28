@@ -1,6 +1,6 @@
 
 object L41 {
-    // 答案肯定在[1, arr.length + 1]之间
+    // 答案肯定在[1, arr.length + 1]之间；基数排序
     def firstMissingPositive(arr: Array[Int]): Int = {
         val set = arr.toSet
         for (v <- 1 to arr.length + 1) {
