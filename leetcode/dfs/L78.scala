@@ -11,6 +11,19 @@ object L78 {
         res.toList
     }
 
+    // 结果有2^n个，可以借助二进制
+    def subsetsV2(arr: Array[Int]): List[List[Int]] = {
+        res = collection.mutable.ListBuffer[List[Int]]()
+        for (i <- 0 until 1 << arr.length) {
+            val path = collection.mutable.ListBuffer[Int]()
+            for (j <- 0 until arr.length) {
+                if (((i >> j) & 1) == 1) path += arr(j)
+            }
+            res += path.toList
+        }
+        res.toList
+    }
+
     private def dfs(arr: Array[Int], index: Int) {
         if (index == arr.length) {
             res += path.toList.reverse
