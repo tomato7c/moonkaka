@@ -71,4 +71,30 @@
 
 ## 二分
 #### 整数二分
+本质是两段性
+满足两段性的数据才能使用二分
+```
+  def search1(arr: Array[Int], l: Int, r: Int): Unit = {
+    while (l < r) {
+      val mid = l + r >>> 1
+      if (check(mid)) {
+        r = mid
+      } else {
+        l = mid + 1
+      }
+    }
+  }
+  // + 1是为了避免死循环，如果l = r - 1; 则mid = (l + r)/2, 会向下取整为l, check通过的话l一直不变
+  def search2(arr: Array[Int], l: Int, r: Int): Unit = {
+    while (l < r) {
+      val mid = l + r + 1 >>> 1
+      if (check(mid)) {
+        l = mid
+      } else {
+        r = mid - 1
+      }
+    }
+  }
+```
+
 #### 浮点数二分
