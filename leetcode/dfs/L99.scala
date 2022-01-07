@@ -7,6 +7,7 @@
  * }
  */
 object L99 {
+    // TODO O(1)空间解法
     def recoverTree(root: TreeNode): Unit = {
         val _res = collection.mutable.ListBuffer[TreeNode]()
         dfs(root, _res)
