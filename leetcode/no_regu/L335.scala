@@ -1,4 +1,22 @@
 object Solution {
+    /*               i-2
+    case 1 : i-1┌─┐
+                └─┼─>i
+                 i-3
+                 
+                    i-2
+    case 2 : i-1 ┌────┐
+                 └─══>┘i-3
+                 i  i-4      (i overlapped i-4)
+
+    case 3 :    i-4
+               ┌──┐ 
+               │i<┼─┐
+            i-3│ i-5│i-1
+               └────┘
+                i-2
+
+*/
     // 我也不知道为什么这样子，翻译图形...
     def isSelfCrossing(arr: Array[Int]): Boolean = {
         if (arr.length < 3) return false
